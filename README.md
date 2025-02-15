@@ -61,3 +61,7 @@ a:hover {
     color: #00ccff;
     text-shadow: 0 0 10px #00ccff;
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 8e3eff4 (Added README documentation)
