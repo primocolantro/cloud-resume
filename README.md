@@ -1,65 +1,59 @@
-body {
-    background-color: #0d0d0d;
-    color: #00ccff;
-    font-family: 'Orbitron', sans-serif;
-    text-align: center;
-    padding: 20px;
-}
+Cloud Resume Challenge
+🚀 A Serverless Cloud Project for My Portfolio
 
-.container {
-    max-width: 800px;
-    margin: auto;
-    padding: 20px;
-    border: 2px solid #00ccff;
-    border-radius: 10px;
-    box-shadow: 0 0 20px #00ccff;
-}
+Overview
+This project is part of the Cloud Resume Challenge, demonstrating my ability to build and deploy a serverless website with a visitor counter using AWS, API Gateway, Lambda, and DynamoDB.
 
-h1 {
-    color: #00ccff;
-    text-shadow: 0 0 10px #00ccff;
-}
+The website is deployed on an S3 static site and includes a visitor count stored in a DynamoDB table and updated dynamically using an AWS Lambda function connected to an API Gateway.
 
-h2 {
-    color: #ff00ff;
-    text-shadow: 0 0 10px #ff00ff;
-}
+Technologies Used
+AWS S3 → Hosts the static website
+AWS API Gateway → Handles requests to the backend
+AWS Lambda → Runs the serverless function for updating visitor count
+AWS DynamoDB → Stores visitor count data
+GitHub Actions → Automates deployments
+CloudShell → Manages code and infrastructure
+HTML, CSS, JavaScript → Frontend design and interaction
+Project Architecture
+Frontend
 
-p, li {
-    font-size: 18px;
-    line-height: 1.6;
-}
+Static website hosted in Amazon S3
+Styled with custom CSS for a futuristic look
+JavaScript fetches the visitor count from an API Gateway endpoint
+Backend
 
-ul {
-    list-style: none;
-    padding: 0;
-}
+API Gateway serves as the entry point
+Lambda function (Python) updates the visitor count in DynamoDB
+Uses IAM permissions to secure interactions between AWS services
+Deployment Workflow
 
-ul li {
-    background: #121212;
-    padding: 10px;
-    margin: 5px;
-    border-radius: 5px;
-    transition: 0.3s;
-}
+Changes are pushed to GitHub
+GitHub Actions trigger automatic deployment
+Updated files are uploaded to S3
+Lambda function updates are deployed seamlessly
 
-ul li:hover {
-    background: #00ccff;
-    color: #121212;
-    transform: scale(1.1);
-    box-shadow: 0 0 10px #00ccff;
-}
+Setup Instructions
 
-a {
-    color: #ff00ff;
-    text-decoration: none;
-    font-weight: bold;
-    transition: 0.3s;
-}
+To replicate this project, follow these steps:
 
-a:hover {
-    color: #00ccff;
-    text-shadow: 0 0 10px #00ccff;
-}
+Clone the repository:
+sh
+Copy
+Edit
+git clone https://github.com/primocolantro/cloud-resume.git
+cd cloud-resume
 
+Deploy the static site:
+sh
+Copy
+Edit
+aws s3 cp index.html s3://your-s3-bucket/ --acl public-read
 
+Deploy the backend (API, Lambda, and DynamoDB)
+Configure CORS for API Gateway
+Test the visitor counter
+
+Future Improvements
+✅ Enable HTTPS using CloudFront
+✅ Optimize frontend performance
+✅ Implement CI/CD pipeline with Terraform
