@@ -33,5 +33,30 @@
             <p>LinkedIn: <a href="https://linkedin.com/in/primovault" target="_blank">linkedin.com/in/primovault</a></p>
         </section>
     </div>
+    <script>
+    async function updateVisitorCount() {
+        try {
+            // Replace with your actual API Gateway Invoke URL
+            const apiUrl = "https://00g7e660t7.execute-api.us-east-1.amazonaws.com/updateVisitorCount"; 
+
+            const response = await fetch(apiUrl, {
+                method: "GET",
+                headers: {
+                    "Content-Type": "application/json"
+                }
+            });
+
+            const data = await response.json();
+            document.getElementById("visitor-count").innerText = `Visitors: ${data.visitor_count}`;
+        } catch (error) {
+            console.error("Error fetching visitor count:", error);
+        }
+    }
+
+    // Call the function when the page loads
+    window.onload = updateVisitorCount;
+</script>
+    <p id="visitor-count">Visitors: Loading...</p>
+
 </body>
 </html>
